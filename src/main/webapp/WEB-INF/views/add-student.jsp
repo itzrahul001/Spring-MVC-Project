@@ -2,78 +2,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 40%;
-            margin: auto;
-            background: #ffffff;
-            padding: 20px;
-            margin-top: 50px;
-            border-radius: 8px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        form {
-            width: 100%;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="number"], select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Submit Student Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Submit Student Details</h1>
-        <form action="submitStudent" method="post">
-
-            <!-- Student ID -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Submit Student Details</h1>
+    <form action="submitStudent" method="post">
+        <div class="form-group">
             <label for="id">Student ID:</label>
-            <input type="number" id="id" name="id" placeholder="Enter Student ID" required />
+            <input type="number" id="id" name="id" class="form-control" placeholder="Enter Student ID" required />
+        </div>
 
-            <!-- Student Name -->
+        <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter Student Name" required />
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter Student Name" required />
+        </div>
 
-            <!-- Mobile Number -->
+        <div class="form-group">
             <label for="mobile">Mobile:</label>
-            <input type="text" id="mobile" name="mobile" placeholder="Enter Mobile Number" required />
+            <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter Mobile Number" required />
+        </div>
 
-            <!-- Country -->
+        <div class="form-group">
             <label for="country">Country:</label>
-            <select id="country" name="country" required>
+            <select id="country" name="country" class="form-control" required>
                 <option value="">Select Country</option>
                 <option value="India">India</option>
                 <option value="USA">United States</option>
@@ -81,10 +35,15 @@
                 <option value="Canada">Canada</option>
                 <option value="Australia">Australia</option>
             </select>
+        </div>
 
-            <!-- Submit Button -->
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

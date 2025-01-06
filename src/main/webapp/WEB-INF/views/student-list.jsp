@@ -4,52 +4,23 @@
 <html>
 <head>
     <title>Student List</title>
-    <style>
-        table {
 
-            width: 50%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 18px;
-            text-align: left;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-             .add-student-link {
-                    margin-bottom: 20px;
-                    display: inline-block;
-                    font-size: 18px;
-                    text-decoration: none;
-                    padding: 10px 15px;
-                    background-color: #007BFF;
-                    color: white;
-                    border-radius: 4px;
-                    border: none;
-                }
-                .add-student-link:hover {
-                    background-color: #0056b3;
-                }
-
-    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Student List</h1>
-  <a href="addStudent" class="add-student-link">Add Student</a>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Student List</h1>
+    <a href="addStudent" class="btn btn-primary mb-3">Add Student</a>
+
     <c:if test="${not empty students}">
-        <table>
-            <thead>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Mobile</th>
                     <th>Country</th>
                     <th>Action</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -60,9 +31,9 @@
                         <td>${student.mobile}</td>
                         <td>${student.country}</td>
                         <td>
-                           <a href="deleteStudent/${student.id}" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>|
-                         <a href="showUpdateStudent/${student.id}">Update</a></td>
-
+                            <a href="deleteStudent/${student.id}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                            <a href="showUpdateStudent/${student.id}" class="btn btn-warning btn-sm">Update</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
@@ -70,10 +41,12 @@
     </c:if>
 
     <c:if test="${empty students}">
-        <p>No students found.</p>
+        <p class="text-danger">No students found.</p>
     </c:if>
+</div>
 
-
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
